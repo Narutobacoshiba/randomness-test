@@ -5,7 +5,7 @@ use cw2::set_contract_version;
 
 use crate::state::{Generator, GENERATORS, RandomState, RANDOM_STATE_HISTORY};
 use crate::error::ContractError;
-use crate::msg::{ExecuteMsg, InstantiateMsg, MigrateMsg, QueryMsg};
+use crate::msg::{ExecuteMsg, InstantiateMsg, MigrateMsg, QueryMsg, DrandCallBack};
 use crate::verify::{VerifyDrandSignature, derive_randomness_from_signature};
 
 // version info for migration info
@@ -69,7 +69,12 @@ pub fn execute(
         ExecuteMsg::Register{moniker} => register(_deps,_info,moniker),
         ExecuteMsg::Push{round,signature,previous_signature} => push(_deps,_info,_env,round,previous_signature,signature),
         ExecuteMsg::GetRandomValue{} => get_random_value(_deps,_info),
+        ExecuteMsg::Recive{callback} => recive(_deps,_info,callback),
     }
+}
+
+fn recive(_deps: DepsMut, _info: MessageInfo, callback: DrandCallBack){
+    
 }
 
 fn register(_deps: DepsMut, _info: MessageInfo, moniker: String) -> Result<Response, ContractError>{
