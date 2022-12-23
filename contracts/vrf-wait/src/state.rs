@@ -9,7 +9,6 @@ use cw_storage_plus::{Deque,Map};
 pub struct Generator {
     pub addr: Addr,
     pub public_key: String,
-    pub moniker: String,
 }
 
 #[cw_serde]

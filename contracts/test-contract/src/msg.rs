@@ -7,10 +7,8 @@ pub struct InstantiateMsg {}
 /// Message type for `execute` entry_point
 #[cw_serde]
 pub enum ExecuteMsg {
-    PushRandomness{randomness:String,signature:String,drand_response:DrandResponse},
-    RequestRandomness{key_hash:String, time_set: u128},
-    Register{public_key:String},
-    DeleteGenerator{},
+    RequestRandomness{},
+    ReturnRandomness{randomness:String}
 }
 
 /// Message type for `migrate` entry_point
@@ -19,7 +17,6 @@ pub enum MigrateMsg {}
 
 /// Message type for `query` entry_point
 #[cw_serde]
-#[derive(QueryResponses)]
 pub enum QueryMsg {
     // This example query variant indicates that any client can query the contract
     // using `YourQuery` and it will return `YourQueryResponse`
@@ -28,13 +25,13 @@ pub enum QueryMsg {
     //
     // #[returns(YourQueryResponse)]
     // YourQuery {},
+    GetRandomness{},
 }
 
+
 #[cw_serde]
-pub struct DrandResponse {
-    pub round: u64,
-    pub signature: String,
-    pub previous_signature: String,
+pub enum CallBackMsg {
+    RequestRandomness{key_hash:String,time_set:u128},
 }
 // We define a custom struct for each query response
 // #[cw_serde]

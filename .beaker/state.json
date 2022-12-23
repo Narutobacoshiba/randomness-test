@@ -1,1 +1,22 @@
-{}
+{
+  "serenity": {
+    "vrf-wait": {
+      "code_id": 836,
+      "addresses": {
+        "test1": "aura1gjfcv5gvqd0j5x5rc6t9qdsjp4mj2s4msk0huk2yfqcfvndz49es7pzzpd"
+      },
+      "proposal": {
+        "store_code": null
+      }
+    },
+    "test-contract": {
+      "code_id": 837,
+      "addresses": {
+        "test1": "aura19le0muuaa0qflvzmc0zedn5azcjkn0u3rdaaf84rd8t64zjvd5ashwc44v"
+      },
+      "proposal": {
+        "store_code": null
+      }
+    }
+  }
+}

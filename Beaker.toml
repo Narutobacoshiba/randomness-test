@@ -1,1 +1,15 @@
 name = "randomness-beancons"
+
+gas_price = '0.025uaura'
+gas_adjustment = 1.3
+account_prefix = 'aura'
+derivation_path = '''m/44'/118'/0'/0/0'''
+
+[networks.serenity]
+chain_id = 'serenity-testnet-001'
+network_variant = 'Shared'
+grpc_endpoint = 'https://grpc.serenity.aura.network:9092'
+rpc_endpoint = 'https://rpc.serenity.aura.network'
+
+[accounts.signer]
+mnemonic = 'fat history among correct tribe face armed rough language wonder era ribbon puppy car subject cube provide video math address simple skate swap oval'

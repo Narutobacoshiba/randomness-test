@@ -53,6 +53,12 @@ hex = { version = "0.4", default-features = false }
 base64 = "0.13.1"
 openssl-sys = "0.9.79"
 openssl = "0.10"
+fff = "0.3"
+# Needed due to missing re-exports in paired
+groupy = "0.4"
+# paired = { path = "../paired" }
+# paired = { git = "https://github.com/webmaster128/paired", branch = "add-missing-symbols" }
+paired = "0.22"
 
 [dev-dependencies]
 cw-multi-test = "0.13.2"

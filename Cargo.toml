@@ -1,7 +1,7 @@
 [workspace]
 
 members = [
-  'contracts/*',
+  'contracts/vrf-wait','contracts/test-contract'
 ]
 
 [profile.release]
